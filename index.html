@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <title>JOE's HOTDOGS</title>
+
+    <style>
+        body {
+            background-image: url('eatingHotDog.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-blend-mode: soft-light;
+            background-size: cover;
+
+            font-size: 20px;
+            font-family: 'Verdana', sans-serif;
+        
+        }
+
+        .header-box {
+            background-color: rgb(187, 22, 7);
+            color: rgb(231, 243, 4);
+            width:cover;
+        }
+
+        .yellow-box {
+            background-color: rgb(248, 254, 65);
+            color: rgb(204, 44, 3);
+            width: 25%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        img { width: 30%;
+              margin-left: auto;
+              display: -webkit-box;
+              border: 5px solid rgb(236, 233, 233);}  
+
+
+        .fixed {
+            position: fixed;
+            top:60px;
+            right:20px;
+        }
+
+
+    </style>
+</head>
+
+    <body>
+        
+        <div class = "header-box">
+
+            <h1>JOE's     HOTDOG STAND</h1>
+
+        </div>
+        
+
+        <div class = "yellow-box">
+
+    
+
+            <script>
+                
+                numHotdogs = prompt("How many hotdogs do you want?");
+                numFries = prompt("How many fries do you want?");
+                numSodas = prompt("How many sodas do you want?");
+
+                intValue = parseInt(numHotdogs);
+    
+                numHotdogs = numHotdogs * 4.25;
+                numFries = numFries * 2.6;
+                numSodas = numSodas * 1.5;
+    
+                sum = numHotdogs + numFries + numSodas;
+                if (sum > 20) {
+                    discountSum = sum * .1;
+                }
+                else {
+                    discountSum = sum
+                }
+    
+                taxedSum = discountSum * 1.0625;
+    
+
+                dogString = "Hot Dogs price: ";
+                sodaString = "Soda price: ";
+                friesString = "Fries price: ";
+                totalPriceString = "TOTAL PRICE: ";
+    
+    
+    
+                document.writeln(dogString.bold() + "$" + numHotdogs.toFixed(2)); 
+                document.writeln("<br>"); 
+                document.writeln(friesString.bold() + "$" + numFries.toFixed(2));
+                document.writeln("<br>"); 
+                document.writeln(sodaString.bold() + "$" + numSodas.toFixed(2));
+                document.writeln("<br>"); 
+                document.writeln("Total: (before discount and tax) $" + sum.toFixed(2)); 
+                document.writeln("<br>"); 
+                document.writeln("Total: (after discount before tax) $" + discountSum.toFixed(2)); 
+                document.writeln("<br>"); 
+                document.writeln("Total: (after discount and tax) $" + taxedSum.toFixed(2)); 
+                document.writeln("<br>"); 
+                document.writeln("<br>"); 
+                document.writeln("<br>"); 
+                document.writeln(totalPriceString.bold() + "$" + taxedSum.toFixed(2)); 
+    
+    
+    
+    
+            
+            </script>
+
+            
+
+            
+            
+        </div>
+
+        <div class = "fixed">
+            <img src="hotdogStand.jpg"/>
+        </div>
+
+
+        
+    </body>
+
+</html>
