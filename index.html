@@ -75,19 +75,22 @@
     
                 sum = numHotdogs + numFries + numSodas;
                 if (sum > 20) {
-                    discountSum = sum * .1;
+                    discountAmount = sum * .1;
+                    sum = sum - discountAmount;
                 }
                 else {
-                    discountSum = sum
+                    discountAmount = 0;
                 }
-    
-                taxedSum = discountSum * 1.0625;
-    
+
+                tax = sum * .0625;
+                sum = sum - tax;
 
                 dogString = "Hot Dogs price: ";
                 sodaString = "Soda price: ";
                 friesString = "Fries price: ";
                 totalPriceString = "TOTAL PRICE: ";
+                discountString = "Discount: ";
+                taxString = "Tax: ";
     
     
     
@@ -97,15 +100,13 @@
                 document.writeln("<br>"); 
                 document.writeln(sodaString.bold() + "$" + numSodas.toFixed(2));
                 document.writeln("<br>"); 
-                document.writeln("Total: (before discount and tax) $" + sum.toFixed(2)); 
+                document.writeln(discountString.bold() + "$" + discountAmount.toFixed(2)); 
                 document.writeln("<br>"); 
-                document.writeln("Total: (after discount before tax) $" + discountSum.toFixed(2)); 
-                document.writeln("<br>"); 
-                document.writeln("Total: (after discount and tax) $" + taxedSum.toFixed(2)); 
+                document.writeln(taxString.bold() + "$" + tax.toFixed(2)); 
                 document.writeln("<br>"); 
                 document.writeln("<br>"); 
                 document.writeln("<br>"); 
-                document.writeln(totalPriceString.bold() + "$" + taxedSum.toFixed(2)); 
+                document.writeln(totalPriceString.bold() + "$" + sum.toFixed(2)); 
     
     
     
