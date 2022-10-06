@@ -25,7 +25,7 @@
         .yellow-box {
             background-color: rgb(248, 254, 65);
             color: rgb(204, 44, 3);
-            width: 32%;
+            width: 25%;
         }
 
         h1 {
@@ -63,15 +63,61 @@
 
             <script>
                 
-                numHotdogs = prompt("How many hotdogs do you want?");
-                numFries = prompt("How many fries do you want?");
-                numSodas = prompt("How many sodas do you want?");
+                num1 = prompt("How many hotdogs do you want?");
+                num2 = prompt("How many fries do you want?");
+                num3 = prompt("How many sodas do you want?");
 
-                intValue = parseInt(numHotdogs);
+                numHotdogs = parseInt(num1);
+                numFries = parseInt(num2);
+                numSodas = parseInt(num3);
     
                 numHotdogs = numHotdogs * 4.25;
+                numHotdogs = Math.round(numHotdogs * 100);
                 numFries = numFries * 2.6;
+                numFries = Math.round(numFries * 100);
                 numSodas = numSodas * 1.5;
+                numSodas = Math.round(numSodas * 100);
+                
+                if (numHotdogs % 100 == 0) {
+                    numHotdogs = numHotdogs / 100;
+                    stringnumHotdogs = numHotdogs + ".00";
+                }
+                else if (numHotdogs % 10 == 0) {
+                    numHotdogs = numHotdogs / 100;
+                    stringnumHotdogs = numHotdogs + "0";
+                }
+                else {
+                    numHotdogs = numHotdogs / 100;
+                    stringnumHotdogs = numHotdogs;
+                }
+
+                if (numFries % 100 == 0) {
+                    numFries = numFries / 100;
+                    stringnumFries = numFries + ".00";
+                }
+                else if (numFries % 10 == 0) {
+                    numFries = numFries / 100;
+                    stringnumFries = numFries + "0";
+                }
+                else {
+                    numFries = numFries / 100;
+                    stringnumFries = numFries;
+                }
+
+                if (numSodas % 100 == 0) {
+                    numSodas = numSodas / 100;
+                    stringnumSodas = numSodas + ".00";
+                }
+                else if (numSodas % 10 == 0) {
+                    numSodas = numSodas / 100;
+                    stringnumSodas = numSodas + "0";
+                }
+                else {
+                    numSodas = numSodas / 100;
+                    stringnumSodas = numSodas;
+                }
+                
+        
     
                 sum = numHotdogs + numFries + numSodas;
                 if (sum > 20) {
@@ -82,8 +128,47 @@
                     discountAmount = 0;
                 }
 
+                discountAmount = Math.round(discountAmount * 100);
+
+                if (discountAmount % 100 == 0) {
+                    discountAmount = discountAmount / 100;
+                    discountAmount = discountAmount + ".00";
+                }
+                else if (discountAmount % 10 == 0) {
+                    discountAmount = discountAmount / 100;
+                    discountAmount = discountAmount + "0";
+                }
+                else {
+                    discountAmount = discountAmount / 100;
+                }
+                
                 tax = sum * .0625;
                 sum = sum - tax;
+                tax = Math.round(tax * 100);
+                sum = Math.round(sum * 100);
+
+                if (tax % 100 == 0) {
+                    tax = tax / 100;
+                    tax = tax + ".00";
+                }
+                else if (tax % 10 == 0) {
+                    tax = tax / 100;
+                    tax = tax + "0";
+                }
+                else {
+                    tax = tax / 100;
+                }
+                if (sum % 100 == 0) {
+                    sum = sum / 100;
+                    sum = sum + ".00";
+                }
+                else if (sum % 10 == 0) {
+                    sum = sum / 100;
+                    sum = sum + "0";
+                }
+                else {
+                    sum = sum / 100;
+                }
 
                 dogString = "Hot Dogs price: ";
                 sodaString = "Soda price: ";
@@ -91,26 +176,23 @@
                 totalPriceString = "TOTAL PRICE: ";
                 discountString = "Discount: ";
                 taxString = "Tax: ";
+
     
-    
-    
-                document.writeln(dogString.bold() + "$" + numHotdogs.toFixed(2)); 
+                document.writeln(dogString.bold() + "$" + stringnumHotdogs); 
                 document.writeln("<br>"); 
-                document.writeln(friesString.bold() + "$" + numFries.toFixed(2));
+                document.writeln(friesString.bold() + "$" + stringnumFries);
                 document.writeln("<br>"); 
-                document.writeln(sodaString.bold() + "$" + numSodas.toFixed(2));
+                document.writeln(sodaString.bold() + "$" + stringnumSodas);
                 document.writeln("<br>"); 
-                document.writeln(discountString.bold() + "$" + discountAmount.toFixed(2)); 
+                document.writeln(discountString.bold() + "$" + discountAmount); 
                 document.writeln("<br>"); 
-                document.writeln(taxString.bold() + "$" + tax.toFixed(2)); 
-                document.writeln("<br>"); 
+                document.writeln(taxString.bold() + "$" + tax); 
                 document.writeln("<br>"); 
                 document.writeln("<br>"); 
-                document.writeln(totalPriceString.bold() + "$" + sum.toFixed(2)); 
-    
-    
-    
-    
+                document.writeln("<br>"); 
+                document.writeln(totalPriceString.bold() + "$" + sum); 
+
+  
             
             </script>
 
